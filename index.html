@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>To-Do App</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link href="https://cdn.misdeliver.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+</head>
+<body class="bg-dark text-white">
+  <div class="container mt-5">
+      <div class="d-flex justify-content-between">
+          <h1>My Tasks</h1>
+          <a href="/logout" class="btn btn-danger">Logout</a>
+      </div>
+      <form action="/add" method="POST" class="mt-4">
+          <div class="input-group">
+              <input class="form-control" type="text" name="task" placeholder="Enter Task">
+              <button class="btn btn-primary">Add</button>
+          </div>
+      </form>
+      <ul class="list-group mt-4">
+          {% for task in tasks %}
+          <li class="list-group-item d-flex justify-content-between">
+              <div>
+                  {% if task.completed%}
+                       <strike>{{task.text}}</strike>
+                  {% else %}
+                       {{task.text}}
+                  {%endif%}
+              </div>
+              <div>
+                  <a href="/complete/{{task.id}}"class="btn btn-danger btn-sm">
+                      Delete
+                  </a>
+              </div>
+          </li>
+          {% endfor %}
+      </ul>
+  </div>
+</body>
+</html>

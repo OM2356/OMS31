@@ -1,0 +1,37 @@
+body
+{
+  background-color:#121212;
+  color:white;
+  font-family:Arial,sans-serif;
+}
+.container
+{
+  max-width:700px;
+}
+.list-group-item
+{
+  background-color:#1e1e1e;
+  color:white;
+  border:1px solid #333;
+}
+.from-control
+{
+  background-color:#2a2a2a;
+  color:white;
+  border:1px solid #444;
+}
+.form-control::placeholder
+{
+  background-color:#2a2a2a;
+  color:white;
+  border-color:#0d6efd;
+  box-shadow:none;
+}
+.btn
+{
+ border-radius:8px;
+}
+strike
+{
+  color:#999;
+}
